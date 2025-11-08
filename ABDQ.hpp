@@ -35,8 +35,8 @@ public:
     T popBack() override;
 
     // Access
-     T& front() const override;
-     T& back() const override;
+     const T& front() const override;
+     const T& back() const override;
 
     // Getters
     std::size_t getSize() const noexcept override;
@@ -150,7 +150,7 @@ T ABDQ<T>::popBack()
 }
 
 template <typename T>
-T& ABDQ<T>::front() const
+const T& ABDQ<T>::front() const
 {
     if(size_ == 0)
     {
@@ -161,7 +161,7 @@ T& ABDQ<T>::front() const
 }
 
 template <typename T>
-T& ABDQ<T>::back() const
+const T& ABDQ<T>::back() const
 {
     if(size_ == 0)
     {
