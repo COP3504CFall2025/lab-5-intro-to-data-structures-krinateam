@@ -90,11 +90,12 @@ ABS<T>& ABS<T>::operator=(const ABS& rhs)
     delete[] array_;
     capacity_ = rhs.capacity_;
     curr_size_ = rhs.curr_size_;
+    array_ = new T[capacity_];
     for(size_t i = 0; i < curr_size_; i++)
     {
         array_[i] = rhs.array_[i];
     }
-
+    return *this;
 }
 
 //move constructor
