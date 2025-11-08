@@ -201,8 +201,9 @@ T ABS<T>::pop()
     else
     {
         curr_size_-= 1;
+        T random = array_[curr_size_];
         shrinkIfNeeded();
-        return array_[curr_size_];
+        return random;
     }
 }
 
