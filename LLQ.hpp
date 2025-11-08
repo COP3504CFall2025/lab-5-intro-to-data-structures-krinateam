@@ -36,7 +36,13 @@ void LLQ<T>::enqueue(const T& item)
 template <typename T>
 T LLQ<T>::dequeue()
 {
+    if(list.getCount() == 0)
+    {
+        throw std::runtime_error("Cannot dequeue because empty list.");
+    }
+    int random = list.getHead()->data;
     list.removeHead();
+    return random;
 }
 
 template <typename T>
