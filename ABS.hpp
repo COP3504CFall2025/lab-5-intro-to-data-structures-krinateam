@@ -200,6 +200,7 @@ T ABS<T>::pop()
     else
     {
         curr_size_-= 1;
+        shrinkIfNeeded();
         return array_[curr_size_];
     }
 }

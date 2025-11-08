@@ -195,7 +195,7 @@ T ABQ<T>::dequeue()
     }
     else
     {
-        int i = 1;
+        size_t i = 1;
         T random = array_[0];
         while(i < curr_size_)
         {
@@ -205,6 +205,7 @@ T ABQ<T>::dequeue()
         }
 
         curr_size_ = curr_size_ - 1;
+        shrinkIfNeeded();
         return random;
     }
 }
