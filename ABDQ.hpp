@@ -211,7 +211,7 @@ void ABDQ<T>::ensureCapacity()
 template <typename T>
 void ABDQ<T>::shrinkIfNeeded()
 {
-    if(size_ < (capacity_/4))
+    if(size_ <= (capacity_/4) && capacity_ > 1)
     {
         T *newArray = new T[capacity_ /2];
         for(int i = 0; i < size_; i++)

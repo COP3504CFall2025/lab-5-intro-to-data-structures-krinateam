@@ -226,7 +226,7 @@ void ABS<T>::ensureCapacity()
 template <typename T>
 void ABS<T>::shrinkIfNeeded()
 {
-    if(curr_size_ < (capacity_/4))
+    if(curr_size_ <= (capacity_/4) && capacity_ > 1)
     {
         T *newArray = new T[capacity_ /2];
         for(int i = 0; i < curr_size_; i++)
