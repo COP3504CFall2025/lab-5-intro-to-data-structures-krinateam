@@ -26,8 +26,8 @@ public:
     T popBack() override;
 
     // Element Accessors
-    const T& front() const override;
-    const T& back() const override;
+     T& front() const override;
+     T& back() const override;
 
     // Getter
     std::size_t getSize() const noexcept override;
@@ -42,7 +42,7 @@ void LLDQ<T>::pushFront(const T& item)
 template <typename T>
 void LLDQ<T>::pushBack(const T& item)
 {
-    list.getTail(item);
+    list.addTail(item);
 }
 
 template <typename T>
@@ -70,7 +70,7 @@ T LLDQ<T>::popBack()
 }
 
 template <typename T>
-const T& LLDQ<T>::front() const
+T& LLDQ<T>::front() const
 {
     if(list.getHead() == nullptr)
     {
@@ -80,7 +80,7 @@ const T& LLDQ<T>::front() const
 }
 
 template <typename T>
-const T& LLDQ<T>::back() const
+T& LLDQ<T>::back() const
 {
     if(list.getTail() == nullptr)
     {
