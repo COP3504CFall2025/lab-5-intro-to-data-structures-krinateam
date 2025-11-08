@@ -196,6 +196,7 @@ T ABQ<T>::dequeue()
     else
     {
         int i = 1;
+        T random = array_[0];
         while(i < curr_size_)
         {
             //shifts element of array by one to remove front element.
@@ -204,7 +205,7 @@ T ABQ<T>::dequeue()
         }
 
         curr_size_ = curr_size_ - 1;
-        return array_[0];
+        return random;
     }
 }
 

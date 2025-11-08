@@ -17,13 +17,13 @@ public:
     ABS& operator=(const ABS& rhs);
     ABS(ABS&& other) noexcept;
     ABS& operator=(ABS&& rhs) noexcept;
-    ~ABS() noexcept override;
+    ~ABS() noexcept;
 
     // Get the number of items in the ABS
     [[nodiscard]] size_t getSize() const noexcept override;
 
     // Get the max size of the ABS
-    //[[nodiscard]] size_t getMaxCapacity() const noexcept;
+    [[nodiscard]] size_t getMaxCapacity() const noexcept;
 
     // Return underlying data for the stack
     //[[nodiscard]] T* getData() const noexcept;
@@ -144,12 +144,13 @@ template<typename T>
     return curr_size_;
 }
 
-/*template<typename T>
+template<typename T>
 [[nodiscard]] size_t ABS<T>::getMaxCapacity() const noexcept
 {
     return capacity_;
 }
 
+/*
 template<typename T>
 [[nodiscard]] T* ABS<T>::getData() const noexcept
 {
