@@ -35,6 +35,10 @@ public:
 
     T pop() override;
 
+
+    void ensureCapacity();
+    void shrinkIfNeeded();
+
 private:
     size_t capacity_;
     size_t curr_size_;
@@ -199,3 +203,37 @@ T ABS<T>::pop()
     }
 }
 
+
+template <typename T>
+void ABS<T>::ensureCapacity()
+{
+    if(curr_size_ == capacity_) {
+        T *newArray = new T[capacity_ * 2];
+        for(int i = 0; i < curr_size_; i++)
+        {
+            newArray[i] = array_[i];
+        }
+
+        delete[] array_;
+        array_ = newArray;
+        capacity_ = capacity_ * 2;
+
+    }
+}
+
+template <typename T>
+void ABS<T>::shrinkIfNeeded()
+{
+    if(curr_size_ < (capacity_/4))
+    {
+        T *newArray = new T[capacity_ /2];
+        for(int i = 0; i < curr_size_; i++)
+        {
+            newArray[i] = array_[i];
+        }
+
+        delete[] array_;
+        array_ = newArray;
+        capacity_ = capacity_ /2;
+    }
+}

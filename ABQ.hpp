@@ -39,6 +39,10 @@ public:
     // Deletion
     T dequeue() override;
 
+
+    void ensureCapacity();
+    void shrinkIfNeeded();
+
 };
 
 //constructor
@@ -201,5 +205,40 @@ T ABQ<T>::dequeue()
 
         curr_size_ = curr_size_ - 1;
         return array_[0];
+    }
+}
+
+
+template <typename T>
+void ABQ<T>::ensureCapacity()
+{
+    if(curr_size_ == capacity_) {
+        T *newArray = new T[capacity_ * 2];
+        for(int i = 0; i < curr_size_; i++)
+        {
+            newArray[i] = array_[i];
+        }
+
+        delete[] array_;
+        array_ = newArray;
+        capacity_ = capacity_ * 2;
+
+    }
+}
+
+template <typename T>
+void ABQ<T>::shrinkIfNeeded()
+{
+    if(curr_size_ < (capacity_/4))
+    {
+        T *newArray = new T[capacity_ /2];
+        for(int i = 0; i < curr_size_; i++)
+        {
+            newArray[i] = array_[i];
+        }
+
+        delete[] array_;
+        array_ = newArray;
+        capacity_ = capacity_ /2;
     }
 }

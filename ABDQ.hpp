@@ -24,7 +24,7 @@ public:
     ABDQ(ABDQ&& other) noexcept;
     ABDQ& operator=(const ABDQ& other);
     ABDQ& operator=(ABDQ&& other) noexcept;
-    ~ABDQ() override;
+    ~ABDQ();
 
     // Insertion
     void pushFront(const T& item) override;
@@ -35,8 +35,8 @@ public:
     T popBack() override;
 
     // Access
-    const T& front() const override;
-    const T& back() const override;
+     T& front() const override;
+     T& back() const override;
 
     // Getters
     std::size_t getSize() const noexcept override;
@@ -150,7 +150,7 @@ T ABDQ<T>::popBack()
 }
 
 template <typename T>
-const T& ABDQ<T>::front() const
+T& ABDQ<T>::front() const
 {
     if(size_ == 0)
     {
@@ -161,7 +161,7 @@ const T& ABDQ<T>::front() const
 }
 
 template <typename T>
-const T& ABDQ<T>::back() const
+T& ABDQ<T>::back() const
 {
     if(size_ == 0)
     {
@@ -208,7 +208,7 @@ void ABDQ<T>::shrinkIfNeeded()
 {
     if(size_ < (capacity_/4))
     {
-        T *newArray = new T[capacity_ * 1/2];
+        T *newArray = new T[capacity_ /2];
         for(int i = 0; i < size_; i++)
         {
             newArray[i] = data_[(front_ + i) % capacity_];
@@ -217,7 +217,7 @@ void ABDQ<T>::shrinkIfNeeded()
         back_ = size_;
         delete[] data_;
         data_ = newArray;
-        capacity_ = capacity_ * 1/2;
+        capacity_ = capacity_ /2;
     }
 }
 
@@ -281,7 +281,7 @@ ABDQ<T>::ABDQ(ABDQ&& other) noexcept
 
 //copy assignment
 template <typename T>
-ABDQ& ABDQ<T>::operator=(const ABDQ& other)
+ABDQ<T>& ABDQ<T>::operator=(const ABDQ& other)
 {
     if(this == &other)
     {
@@ -304,7 +304,7 @@ ABDQ& ABDQ<T>::operator=(const ABDQ& other)
 
 //move assignment
 template <typename T>
-ABDQ& ABDQ<T>::operator=(ABDQ&& other) noexcept
+ABDQ<T>& ABDQ<T>::operator=(ABDQ&& other) noexcept
 {
     if(this == &other)
     {
