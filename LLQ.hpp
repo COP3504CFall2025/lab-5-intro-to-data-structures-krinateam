@@ -40,7 +40,7 @@ T LLQ<T>::dequeue()
     {
         throw std::runtime_error("Cannot dequeue because empty list.");
     }
-    int random = list.getHead()->data;
+    T random = list.getHead()->data;
     list.removeHead();
     return random;
 }

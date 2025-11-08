@@ -39,7 +39,7 @@ T LLS<T>::pop()
     {
         throw std::runtime_error("Can't pop stack because it is empty.");
     }
-    T save = list.getHead();
+    T save = list.getHead()->data;
     list.removeHead();
     return save;
 }
