@@ -1,0 +1,3 @@
+/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/CMakeFiles/RunMain.dir
+/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/CMakeFiles/rebuild_cache.dir

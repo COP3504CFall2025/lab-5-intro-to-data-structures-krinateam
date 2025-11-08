@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="lab5-intro-to-data-structures"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RunMain">
+				<Option output="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/RunMain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DMAIN"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 RunMain"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RunMain/fast">
+				<Option output="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/RunMain" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DMAIN"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 RunMain/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/ABDQ.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/ABQ.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/ABS.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/Interfaces.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/LLDQ.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/LLQ.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/LLS.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/LinkedList.hpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/main.cpp">
+			<Option target="RunMain"/>
+		</Unit>
+		<Unit filename="/Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

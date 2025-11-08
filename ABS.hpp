@@ -23,10 +23,10 @@ public:
     [[nodiscard]] size_t getSize() const noexcept override;
 
     // Get the max size of the ABS
-    [[nodiscard]] size_t getMaxCapacity() const noexcept;
+    //[[nodiscard]] size_t getMaxCapacity() const noexcept;
 
     // Return underlying data for the stack
-    [[nodiscard]] T* getData() const noexcept;
+    //[[nodiscard]] T* getData() const noexcept;
 
     // Push item onto the stack
     void push(const T& data) override;
@@ -41,3 +41,161 @@ private:
     T* array_;
     static constexpr size_t scale_factor_ = 2;
 };
+
+//constructor
+template<typename T>
+ABS<T>::ABS()
+{
+    capacity_ = 1;
+    curr_size_ = 0;
+    array_ = new T[capacity_];
+}
+
+//parameterized constructor
+template<typename T>
+ABS<T>::ABS(const size_t capacity)
+{
+    capacity_ = capacity;
+    curr_size_ = 0;
+    array_ = new T[capacity_];
+}
+
+//copy constructor
+template<typename T>
+ABS<T>::ABS(const ABS& other)
+{
+    capacity_ = other.capacity_;
+    curr_size_ = other.curr_size_;
+
+    array_ = new T[capacity_];
+    for(size_t i = 0; i < curr_size_; i++)
+    {
+        array_[i] = other.array_[i];
+    }
+
+}
+
+//copy assignment
+template<typename T>
+ABS<T>& ABS<T>::operator=(const ABS& rhs)
+{
+    if(this == &rhs)
+    {
+        return *this;
+    }
+    delete[] array_;
+    capacity_ = rhs.capacity_;
+    curr_size_ = rhs.curr_size_;
+    for(size_t i = 0; i < curr_size_; i++)
+    {
+        array_[i] = rhs.array_[i];
+    }
+
+}
+
+//move constructor
+template<typename T>
+ABS<T>::ABS(ABS&& other) noexcept
+{
+    capacity_ = other.capacity_;
+    curr_size_ = other.curr_size_;
+    array_ = other.array_;
+
+    other.capacity_ = 0;
+    other.curr_size_ = 0;
+    other.array_ = nullptr;
+}
+
+//move assignment
+template<typename T>
+ABS<T>& ABS<T>::operator=(ABS&& rhs) noexcept
+{
+    if(this == &rhs)
+    {
+        return *this;
+    }
+    delete[] array_;
+    capacity_ = rhs.capacity_;
+    curr_size_ = rhs.curr_size_;
+    array_ = rhs.array_;
+
+    rhs.capacity_ = 0;
+    rhs.curr_size_ = 0;
+    rhs.array_ = nullptr;
+    return *this;
+}
+
+//destructor
+template<typename T>
+ABS<T>::~ABS() noexcept
+{
+    delete[] array_;
+    capacity_ = 0;
+    curr_size_ = 0;
+}
+
+template<typename T>
+[[nodiscard]] size_t ABS<T>::getSize() const noexcept
+{
+    return curr_size_;
+}
+
+/*template<typename T>
+[[nodiscard]] size_t ABS<T>::getMaxCapacity() const noexcept
+{
+    return capacity_;
+}
+
+template<typename T>
+[[nodiscard]] T* ABS<T>::getData() const noexcept
+{
+    return array_;
+}
+*/
+template<typename T>
+void ABS<T>::push(const T& data)
+{
+    if(curr_size_ == capacity_)
+    {
+        T* newArray = new T[capacity_ * scale_factor_];
+        capacity_ = capacity_ * scale_factor_;
+
+        for(size_t i = 0; i < curr_size_; i++)
+        {
+            newArray[i] = array_[i];
+        }
+        delete[] array_;
+        array_ = newArray;
+        newArray = nullptr;
+    }
+    array_[curr_size_] = data;
+    curr_size_ += 1;
+}
+
+template<typename T>
+T ABS<T>::peek() const
+{
+    if(curr_size_ == 0)
+    {
+        throw std::runtime_error("There are no elements in the array.");
+    }
+    else
+    {
+        return array_[curr_size_ - 1];
+    }
+}
+
+template<typename T>
+T ABS<T>::pop()
+{
+    if(curr_size_ == 0)
+    {
+        throw std::runtime_error("Can't pop because the array is empty.");
+    }
+    else
+    {
+        curr_size_-= 1;
+        return array_[curr_size_];
+    }
+}
+

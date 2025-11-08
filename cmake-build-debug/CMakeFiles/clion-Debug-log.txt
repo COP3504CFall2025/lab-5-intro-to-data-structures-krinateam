@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/krinaparikh/lab-5-intro-to-data-structures-krinateam -B /Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/krinaparikh/lab-5-intro-to-data-structures-krinateam/cmake-build-debug

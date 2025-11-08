@@ -11,7 +11,7 @@ private:
     LinkedList<T> list;
 public:
     // Constructor
-    LLS();
+    LLS() = default;
 
     // Insertion
     void push(const T& item) override;
@@ -25,3 +25,38 @@ public:
     //Getters
     std::size_t getSize() const noexcept override;
 };
+
+template <typename T>
+void LLS<T>::push(const T& item)
+{
+    list.addHead(item);
+}
+
+template <typename T>
+T LLS<T>::pop()
+{
+    if(list.getCount() == 0)
+    {
+        throw std::runtime_error("Can't pop stack because it is empty.");
+    }
+    T save = list.getHead();
+    list.removeHead();
+    return save;
+}
+
+template <typename T>
+T LLS<T>::peek() const
+{
+    if(list.getCount() == 0)
+    {
+        throw std::runtime_error("Can't peek at stack because it is empty.");
+    }
+
+    return list.getHead()->data;
+}
+
+template <typename T>
+std::size_t LLS<T>::getSize() const noexcept
+{
+    return list.getCount();
+}
