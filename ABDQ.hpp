@@ -1,9 +1,14 @@
+//REFERENCES
+//https://embeddedartistry.com/blog/2017/05/17/creating-a-circular-buffer-in-c-and-c/
+//^^ to understand circular buffer and see examples of how they work
+
 #pragma once
 
 #include <cstddef>
 #include <stdexcept>
 #include "Interfaces.hpp"
 #include <utility>
+
 
 template <typename T>
 class ABDQ : public DequeInterface<T> {

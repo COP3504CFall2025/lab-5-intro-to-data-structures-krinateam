@@ -23,11 +23,11 @@ public:
     ABQ& operator=(const ABQ& rhs);
     ABQ(ABQ&& other) noexcept;
     ABQ& operator=(ABQ&& rhs) noexcept;
-    ~ABQ() noexcept override;
+    ~ABQ() noexcept;
 
     // Getters
     [[nodiscard]] size_t getSize() const noexcept override;
-    //[[nodiscard]] size_t getMaxCapacity() const noexcept;
+    [[nodiscard]] size_t getMaxCapacity() const noexcept;
     //[[nodiscard]] T* getData() const noexcept;
 
     // Insertion
@@ -78,7 +78,7 @@ ABQ<T>::ABQ(const ABQ& other)
 
 //copy assignment
 template<typename T>
-ABQ& ABQ<T>::operator=(const ABQ& rhs)
+ABQ<T>& ABQ<T>::operator=(const ABQ& rhs)
 {
     if(this == &rhs)
     {
@@ -108,7 +108,7 @@ ABQ<T>::ABQ(ABQ&& other) noexcept
 
 //move assignment
 template<typename T>
-ABQ& ABQ<T>::operator=(ABQ&& rhs) noexcept
+ABQ<T>& ABQ<T>::operator=(ABQ&& rhs) noexcept
 {
     if(this == &rhs)
     {
@@ -140,12 +140,12 @@ template<typename T>
     return curr_size_;
 }
 
-/*template<typename T>
+template<typename T>
 [[nodiscard]] size_t ABQ<T>::getMaxCapacity() const noexcept
 {
     return capacity_;
 }
-
+/*
 template<typename T>
 [[nodiscard]] T* ABQ<T>::getData() const noexcept
 {
