@@ -149,6 +149,10 @@ bool LinkedList<T>::removeHead()
     {
         head->prev = nullptr;
     }
+    else
+    {
+        tail = nullptr;
+    }
 
     delete temp;
     count--;
@@ -170,6 +174,11 @@ bool LinkedList<T>::removeTail()
     {
         tail->next = nullptr;
     }
+    else
+    {
+        head = nullptr;
+    }
+
 
     delete temp;
     count--;
@@ -276,6 +285,9 @@ LinkedList<T>::LinkedList()
 template <typename T>
 LinkedList<T>::LinkedList(const LinkedList<T>& list)
 {
+    head = nullptr;
+    tail = nullptr;
+    count = 0;
     Node* temp = list.head;
     while(temp != nullptr)
     {
@@ -288,6 +300,10 @@ LinkedList<T>::LinkedList(const LinkedList<T>& list)
 template <typename T>
 LinkedList<T>::LinkedList(LinkedList<T>&& other) noexcept
 {
+    head = nullptr;
+    tail = nullptr;
+    count = 0;
+
     count = other.count;
     head = other.head;
     tail = other.tail;

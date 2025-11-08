@@ -36,36 +36,56 @@ public:
 template <typename T>
 void LLDQ<T>::pushFront(const T& item)
 {
-    list.addHead();
+    list.addHead(item);
 }
 
 template <typename T>
 void LLDQ<T>::pushBack(const T& item)
 {
-    list.getTail();
+    list.getTail(item);
 }
 
 template <typename T>
 T LLDQ<T>::popFront()
 {
+    if(list.getHead() == nullptr)
+    {
+        throw std::runtime_error("Cannot pop front b/c linked list is empty.");
+    }
+    T random = list.getHead()->data;
     list.removeHead();
+    return random;
 }
 
 template <typename T>
 T LLDQ<T>::popBack()
 {
+    if(list.getHead() == nullptr)
+    {
+        throw std::runtime_error("Cannot pop back b/c linked list is empty.");
+    }
+    T random = list.getTail() -> data;
     list.removeTail();
+    return random;
 }
 
 template <typename T>
 const T& LLDQ<T>::front() const
 {
+    if(list.getHead() == nullptr)
+    {
+        throw std::runtime_error("Cannot retrieve front data b/c linked list is empty.");
+    }
     return list.getHead()->data;
 }
 
 template <typename T>
 const T& LLDQ<T>::back() const
 {
+    if(list.getTail() == nullptr)
+    {
+        throw std::runtime_error("Cannot retrieve back data b/c linked list is empty.");
+    }
     return list.getTail()->data;
 }
 
