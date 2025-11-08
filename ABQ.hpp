@@ -200,5 +200,6 @@ T ABQ<T>::dequeue()
         }
 
         curr_size_ = curr_size_ - 1;
+        return array_[0];
     }
 }
